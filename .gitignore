@@ -1,0 +1,13 @@
+*credentials*
+!*.example
+.env
+.mypy_cache
+.venv
+.vscode/
+
+# dbt generated
+target/
+dbt_packages/
+logs/
+
+.DS_Store

@@ -1,0 +1,68 @@
+[tool.mypy]
+ignore_missing_imports = true
+warn_unused_configs = true
+
+[tool.poetry]
+name = "duck-dbt-demo"
+version = "0.1.0"
+description = "A demo project for DBT + DuckDB (good for prototyping)"
+authors = ["Paddy Alton <paddyalton@gmail.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.10"
+dbt-core = "^1.8.4"
+dbt-duckdb = "^1.8.2"
+duckdb = "^1.0.0"
+saneyaml = "^0.6.0"
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.11.1"
+pytest = "^8.3.2"
+pytest-watcher = "^0.4.2"
+ruff = "^0.5.6"
+
+[tool.pytest-watcher]
+now = false
+clear = true
+delay = 0.2
+runner = "pytest"
+runner_args = []
+patterns = ["*.py"]
+ignore_patterns = []
+
+[tool.ruff]
+target-version = "py311"
+line-length = 89
+
+[tool.ruff.lint]
+select = [
+    "ALL",
+]
+ignore = [
+    "ANN101",
+    "ANN102",
+    "COM812",
+    "CPY",
+    "D",
+    "FBT",
+    "INP001",
+    "ISC001",
+    "RET",
+    "PTH",
+    "S",
+    "T",
+    "TRY003",
+]
+unfixable = []
+
+[tool.ruff.lint.flake8-annotations]
+suppress-none-returning = true
+
+[tool.ruff.lint.isort]
+lines-between-types = 1
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

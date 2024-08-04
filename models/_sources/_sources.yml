@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+
+  - name: warehouse
+    description: Tables stored in a local DuckDB file-based warehouse
+    schema: main
+    tables:
+      - name: products

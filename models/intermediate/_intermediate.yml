@@ -1,0 +1,91 @@
+version: 2
+
+models:
+
+
+  - name: intm_products__countries
+    description: ''
+    columns:
+      - name: product_id
+        description: ''
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - 1
+                - 2
+              quote: no
+        meta:
+          data_type: integer
+      - name: product_country
+        description: ''
+        tests:
+          - not_null
+          - unique
+          - accepted_values:
+              values:
+                - DE
+                - FR
+                - GB
+                - IE
+                - US
+              quote: no
+        meta:
+          data_type: varchar
+
+
+  - name: intm_products__versions
+    description: ''
+    columns:
+      - name: product_id
+        description: ''
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - 1
+                - 2
+              quote: no
+        meta:
+          data_type: integer
+      - name: product_version
+        description: ''
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - 1
+                - 2
+                - 3
+              quote: no
+        meta:
+          data_type: integer
+
+
+  - name: intm_products__products
+    description: ''
+    columns:
+      - name: product_id
+        description: ''
+        tests:
+          - not_null
+          - unique
+          - accepted_values:
+              values:
+                - 1
+                - 2
+              quote: no
+        meta:
+          data_type: integer
+      - name: product_name
+        description: ''
+        tests:
+          - not_null
+          - unique
+          - accepted_values:
+              values:
+                - gizmo
+                - widget
+              quote: no
+        meta:
+          data_type: varchar

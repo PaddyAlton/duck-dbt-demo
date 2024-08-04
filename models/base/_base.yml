@@ -1,0 +1,43 @@
+version: 2
+
+models:
+
+
+  - name: base_warehouse__products
+    description: ''
+    columns:
+      - name: product_id
+        description: ''
+        tests:
+          - not_null
+          - unique
+          - accepted_values:
+              values:
+                - 1
+                - 2
+              quote: no
+        meta:
+          data_type: integer
+      - name: product_name
+        description: ''
+        tests:
+          - not_null
+          - unique
+          - accepted_values:
+              values:
+                - gizmo
+                - widget
+              quote: no
+        meta:
+          data_type: varchar
+      - name: product_versions
+        description: ''
+        meta:
+          data_type: varchar[]
+      - name: product_countries
+        description: ''
+        tests:
+          - not_null
+          - unique
+        meta:
+          data_type: varchar[]

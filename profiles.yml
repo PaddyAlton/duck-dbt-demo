@@ -1,0 +1,9 @@
+duck_dbt_demo:
+  target: prod
+  outputs:
+    prod:
+      type: duckdb
+      path: ./warehouse.duckdb
+    test:
+      type: duckdb
+      path: ./warehouse.duckdb
